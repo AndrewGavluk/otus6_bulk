@@ -12,7 +12,7 @@ class ConsolePrinter : public Printer
         std::ostream& out;
 };
 
-ConsolePrinter::ConsolePrinter(std::ostream& _out) :out{_out} {}
+ConsolePrinter::ConsolePrinter(std::ostream& _out) : out{_out} {}
 
 void ConsolePrinter::print(std::vector<std::string>& bulk, std::string& time) {
     

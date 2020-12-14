@@ -13,8 +13,13 @@ int main(/*int argc, char** argv*/){
     interpreter inter1{std::atoi(argv[1])};*/
     interpreter inter1{3};
 
-    //inter1.appendOutput(std::shared_ptr<ConsolePrinter>{});
-    //inter1.appendOutput(std::shared_ptr<FilePrinter>{});
+    std::shared_ptr<Printer> Console = std::make_shared<ConsolePrinter>(std::cout);
+    
+    std::ofstream FileStream1;
+    std::shared_ptr<Printer> File1 = std::make_shared<FilePrinter>(FileStream1);
+
+    inter1.push_back(Console);
+    inter1.push_back(File1);
     inter1.processStream(std::cin);
 
     return 0;
