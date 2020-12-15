@@ -53,8 +53,6 @@ TEST(gtest_interpret_test1, test_file_simple2){
 	testInputOutput(output, output);
 }
 
-
-
 TEST(gtest_interpret_test1, test_file_bulksize1){
 	std::vector<std::string>  input {"cmd1", "cmd2", "cmd3"};
 	std::vector<std::string>  output {"cmd3"};
@@ -66,7 +64,6 @@ TEST(gtest_interpret_test1, test_file_bulksize2){
 	std::vector<std::string>  output {"cmd5", "cmd6"};
 	testInputOutput(input, output, 2);
 }
-
 
 TEST(gtest_interpret_test1, test_file_brackets){
 	std::vector<std::string>  input {"cmd1", "cmd2", "{"};
