@@ -7,7 +7,7 @@ add_executable(gtest_interpret test_interpret.cpp)
 
 set_target_properties(gtest_interpret 
 	PROPERTIES 
-	CXX_STANDARD 14
+	CXX_STANDARD 17
 	CXX_STANDARD_REQUIRED ON
 	INCLUDE_DIRECTORIES ${GTEST_INCLUDE_DIRS})
 	
