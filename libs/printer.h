@@ -7,8 +7,8 @@
 class Printer
 {
     public:
-        Printer(){};
-        virtual ~Printer(){};
+        Printer() = default;
+        virtual ~Printer() = default;
         virtual void print(std::vector<std::string>& bulk, std::string& time) = 0 ;
     
 };

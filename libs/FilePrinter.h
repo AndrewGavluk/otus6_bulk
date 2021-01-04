@@ -1,6 +1,6 @@
 #include "printer.h"
 
-class FilePrinter : virtual public  Printer
+class FilePrinter : public  Printer
 {
     public:
         FilePrinter(std::ofstream& fstr) : m_ofstream{fstr} {};

@@ -27,8 +27,6 @@ class interpreter
         size_t m_bulkSize;
 };
 
-#include "lib_interpret.h" 
-
 interpreter::interpreter(int size) : m_bulkSize{static_cast<size_t>(size)}{}
 
 void interpreter::push_back(std::shared_ptr<Printer>& printer)
@@ -52,13 +50,17 @@ void interpreter::processStream(std::istream& iss)
     std::string input;
     std::time_t time=0;
 
+    const std::string open = "{";
+    const std::string close = "}";
+
+
     while(std::getline(iss, input)){
-        if ( input=="{" && level++ ) continue;
-        if ( input=="}" && --level ) continue; 
+        if ( input==open && level++ ) continue;
+        if ( input==close && --level ) continue; 
         
         if (!time)  time = std::time(nullptr);
 
-        if (input=="}" || input=="{")
+        if (input==close || input==open)
             print(time);
         
         else{// if string is not brackets print block, then push it to block, 
